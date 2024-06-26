@@ -66,7 +66,8 @@ export default {
 
 
     const setAuthorized = () => {
-      tonConnectUI!.onStatusChange(async (w) => {
+      try{
+        tonConnectUI!.onStatusChange(async (w) => {
         if (!w) {
           TonProofDemoApi.reset();
           authorized.value = false;
@@ -88,6 +89,9 @@ export default {
 
         authorized.value = true;
       });
+      }catch(e) {
+        console.log(e);
+      }
     };
 
     watch(tonConnectUI!, () => {
