@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host --force",
-    "build": "vue-tsc && vite build",
+    "build": "GH_PAGES=true VITE_GH_PAGES=true & vite build",
     "preview": "vite preview",
     "postinstall": "node ./scripts/postinstall.mjs"
   },
@@ -32,5 +32,10 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vue-tsc": "^1.8.5"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

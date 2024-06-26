@@ -53,9 +53,7 @@ export default {
       }
     };
 
-    /**
-     * 点击当存在钱包的时候获取到AccountInfo
-     */
+
     const handleClick = async () => {
       if (!wallet) {
         return;
@@ -66,10 +64,7 @@ export default {
       data.value = response;
     };
 
-    /**
-     * 当tonConnectUI内容发生改变的时
-     * 从新请求tonProof内相应的状态
-     */
+
     const setAuthorized = () => {
       tonConnectUI!.onStatusChange(async (w) => {
         if (!w) {

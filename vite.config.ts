@@ -14,6 +14,9 @@ export default defineConfig({
   plugins: [
     vue()
   ],
+  build: {
+    outDir: 'docs'
+  },
   base: process.env.GH_PAGES ? '/demo-dapp-with-vue-ui/' : './',
   server: {
     fs: {
