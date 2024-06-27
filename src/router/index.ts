@@ -1,6 +1,5 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
-const HelloWorld = () => import("../components/HelloWorld.vue");
 const Home = () => import("../views/Home.vue");
 
 const routes: Array<RouteRecordRaw> = [
@@ -12,18 +11,10 @@ const routes: Array<RouteRecordRaw> = [
     },
     component: Home,
   },
-  {
-    path: "/helloworld",
-    name: "helloworld",
-    meta: {
-      title: "helloworld",
-    },
-    component: HelloWorld,
-  },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 export default router;

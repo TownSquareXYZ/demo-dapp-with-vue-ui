@@ -10,7 +10,8 @@ import {CreateJettonRequestDto} from "./src/server/dto/create-jetton-request-dto
 class TonProofDemoApiService {
   private localStorageKey = 'demo-api-access-token';
 
-  private host = document.baseURI.replace(/\/$/, '');
+  // private host = document.baseURI.replace(/\/$/, '');
+  private host = "";
 
   public accessToken: string | null = null;
 

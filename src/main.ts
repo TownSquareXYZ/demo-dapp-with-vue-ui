@@ -8,12 +8,14 @@ import { worker } from './server/worker';
 
 
 async function enableMocking() {
+    const isGitHubPages = import.meta.env.VITE_GH_PAGES === '1';
+
     return new Promise(async (resolve) => {
         const startMockWorker = () => worker.start({
             onUnhandledRequest: 'bypass',
             quiet: false,
             serviceWorker: {
-                url: `${import.meta.env.VITE_GH_PAGES ? '/demo-dapp-with-vue-ui' : ''}/mockServiceWorker.js`
+                url: `${isGitHubPages ? '/demo-dapp-with-vue-ui' : ''}/mockServiceWorker.js`
             }
         });
         let serviceWorkerRegistration = await startMockWorker();

@@ -30,6 +30,7 @@ export default {
     const tonConnectUI = inject<TonConnectUI | null>("tonConnectUI", null);
 
     const authorized = ref(false);
+    const injected = ref(false);
 
     const recreateProofPayload = async () => {
       if (tonConnectUI) {
@@ -95,8 +96,14 @@ export default {
     };
 
     watch(tonConnectUI!, () => {
-      setAuthorized();
-      recreateProofPayload();
+      if (!injected.value && wallet != null) {
+        setAuthorized();
+        recreateProofPayload();
+        injected.value = true;
+      }
+      if (wallet == null) {
+        injected.value = false;
+      }
     });
 
     onMounted(() => {

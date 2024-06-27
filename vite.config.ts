@@ -9,7 +9,7 @@ export default defineConfig({
   //   port: 28847,
   // },
   optimizeDeps: {
-    include: ['vue','buffer'],
+    include: ['vue', 'buffer'],
   },
   plugins: [
     vue()
@@ -17,7 +17,8 @@ export default defineConfig({
   build: {
     outDir: 'docs'
   },
-  base: process.env.GH_PAGES ? '/demo-dapp-with-vue-ui/' : './',
+  base: '/demo-dapp-with-vue-ui/',
+  // base: process.env.GH_PAGES ? '/demo-dapp-with-vue-ui/' : './',
   server: {
     fs: {
       allow: ['../sdk', './'],
