@@ -11,6 +11,7 @@
     <Vue3JsonEditor
       v-model="data"
       :expandedOnStart="true"
+      mode="view"
       theme="my-json-theme"
     />
   </div>

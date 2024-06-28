@@ -5,6 +5,7 @@
       <select @change="onLangChange($event)">
         <option value="en">en</option>
         <option value="ru">ru</option>
+        <option value="zh">zh</option>
       </select>
     </div>
 

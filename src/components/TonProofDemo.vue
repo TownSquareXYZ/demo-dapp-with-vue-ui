@@ -5,7 +5,7 @@
       Call backend getAccountInfo()
     </button>
     <div class="ton-proof-demo__error" v-else>Connect wallet to call API</div>
-    <Vue3JsonEditor v-model="data" :expandedOnStart="true" />
+    <Vue3JsonEditor v-model="data" :expandedOnStart="true" mode="view" />
   </div>
 </template>
     
@@ -54,7 +54,6 @@ export default {
       }
     };
 
-
     const handleClick = async () => {
       if (!wallet) {
         return;
@@ -65,32 +64,31 @@ export default {
       data.value = response;
     };
 
-
     const setAuthorized = () => {
-      try{
+      try {
         tonConnectUI!.onStatusChange(async (w) => {
-        if (!w) {
-          TonProofDemoApi.reset();
-          authorized.value = false;
-          return;
-        }
+          if (!w) {
+            TonProofDemoApi.reset();
+            authorized.value = false;
+            return;
+          }
 
-        if (w.connectItems?.tonProof && "proof" in w.connectItems.tonProof) {
-          await TonProofDemoApi.checkProof(
-            w.connectItems.tonProof.proof,
-            w.account
-          );
-        }
+          if (w.connectItems?.tonProof && "proof" in w.connectItems.tonProof) {
+            await TonProofDemoApi.checkProof(
+              w.connectItems.tonProof.proof,
+              w.account
+            );
+          }
 
-        if (!TonProofDemoApi.accessToken) {
-          tonConnectUI!.disconnect();
-          authorized.value = false;
-          return;
-        }
+          if (!TonProofDemoApi.accessToken) {
+            tonConnectUI!.disconnect();
+            authorized.value = false;
+            return;
+          }
 
-        authorized.value = true;
-      });
-      }catch(e) {
+          authorized.value = true;
+        });
+      } catch (e) {
         console.log(e);
       }
     };

@@ -17,7 +17,11 @@
 
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { TonConnectButton, TonConnectUIProvider ,THEME } from "@townsquarexyz/ui-vue";
+import {
+  TonConnectButton,
+  TonConnectUIProvider,
+  THEME,
+} from "@townsquarexyz/ui-vue";
 import TxForm from "../components/TxForm.vue";
 import CreateJettonDemo from "../components/CreateJettonDemo.vue";
 import TonProofDemo from "../components/TonProofDemo.vue";
@@ -57,10 +61,15 @@ const options = {
     twaReturnUrl: "https://t.me/DemoDappWithTonConnectBot/demo",
   },
 };
-onMounted(()=>{
-  console.log("onMounted");
+onMounted(() => {
+  // console.log("onMounted");
+  const divs = document.getElementsByClassName("jsoneditor-modes");
+  const divArray = Array.from(divs);
+  divArray.forEach((div) => {
+    const element = div as HTMLElement;
+    element.style.display = "none";
+  });
 });
-
 </script>
 
 <style lang="scss">

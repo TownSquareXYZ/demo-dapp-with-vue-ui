@@ -34,10 +34,16 @@ const wallet = useTonWallet() as unknown as Ref<
 >;
 
 onMounted(async () => {
-  console.log("TxForm", wallet.value?.device);
-  console.log("TxForm", tonConnectUI?.wallet);
-  // const wa = await tonConnectUI?.getWallets();
-  // console.log(wa);
+  const jsonEditorVue = document.querySelector(
+    ".jsoneditor-vue"
+  ) as HTMLElement | null;
+  if (jsonEditorVue) {
+    jsonEditorVue.style.width = "100%";
+  }
+  const aceEditor = document.querySelector(".ace_editor") as HTMLElement | null;
+  if (aceEditor) {
+    aceEditor.style.minHeight = "300px";
+  }
 });
 
 const handleSendTransaction = () => {
@@ -55,7 +61,7 @@ const openWalletModal = () => {
   }
 };
 const jsonChange = (value: any) => {
-  console.log(value);
+  // console.log(value);
   tx.value = value;
 };
 </script>
@@ -75,6 +81,7 @@ const jsonChange = (value: any) => {
       v-model="tx"
       :expandedOnStart="true"
       @json-change="jsonChange"
+      mode="code"
       class="json-view"
     />
 
@@ -100,6 +107,7 @@ const jsonChange = (value: any) => {
   margin: 0 auto;
   .json-view {
     color: #fff !important;
+    width: 100%;
   }
 
   h3 {
