@@ -5,7 +5,6 @@
       <select @change="onLangChange($event)">
         <option value="en">en</option>
         <option value="ru">ru</option>
-        <option value="zh">zh</option>
       </select>
     </div>
 
@@ -23,7 +22,7 @@
       <select @change="onBordersChange($event)">
         <option value="m">m</option>
         <option value="s">s</option>
-        <option value="none">none</option>
+        <option value="none">none</option>∂
       </select>
     </div>
 
