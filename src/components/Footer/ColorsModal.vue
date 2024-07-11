@@ -24,7 +24,7 @@
 </template>
   
   <script>
-import { THEME } from "@townsquarexyz/ui-vue";
+import { THEME } from "@townsquarelabs/ui-vue";
 import ColorsSelect from "./ColorsSelect.vue";
 
 export default {

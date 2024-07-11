@@ -36,7 +36,7 @@ npm manifest:
       "@ton/crypto": "^3.2.0",
       "@ton/ton": "^13.11.2",
       "@tonconnect/ui": "^2.0.3",
-      "@townsquarexyz/ui-vue": "1.0.4",
+      "@townsquarelabs/ui-vue": "1.0.4",
       "@vue/compat": "^3.4.29",
       "scss": "^0.2.4",
       "vue": "^3.3.4",
@@ -431,9 +431,9 @@ Lockfile:
       deepmerge "^4.2.2"
       ua-parser-js "^1.0.35"
   
-  "@townsquarexyz/ui-vue@1.0.4":
+  "@townsquarelabs/ui-vue@1.0.4":
     version "1.0.4"
-    resolved "http://43.153.41.56:4873/@townsquarexyz/ui-vue/-/ui-vue-1.0.4.tgz#afab6f47d3375d0fce5dea229aa569581ac31d6b"
+    resolved "http://43.153.41.56:4873/@townsquarelabs/ui-vue/-/ui-vue-1.0.4.tgz#afab6f47d3375d0fce5dea229aa569581ac31d6b"
     integrity sha512-1J1FSMVN1HW2npxUTv5ko2eueqbgOAeNWwQ8x6jfGwGsrCfey/uNeoIgWVeUMQv9UYFf1AV+ZSx5oD8KSi7Czg==
     dependencies:
       "@tonconnect/ui" "^2.0.3"

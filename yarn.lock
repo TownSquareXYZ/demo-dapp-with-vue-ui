@@ -1568,10 +1568,10 @@
     deepmerge "^4.2.2"
     ua-parser-js "^1.0.35"
 
-"@townsquarexyz/ui-vue@1.0.4":
-  version "1.0.4"
-  resolved "http://43.153.41.56:4873/@townsquarexyz/ui-vue/-/ui-vue-1.0.4.tgz#afab6f47d3375d0fce5dea229aa569581ac31d6b"
-  integrity sha512-1J1FSMVN1HW2npxUTv5ko2eueqbgOAeNWwQ8x6jfGwGsrCfey/uNeoIgWVeUMQv9UYFf1AV+ZSx5oD8KSi7Czg==
+"@townsquarelabs/ui-vue@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@townsquarelabs/ui-vue/-/ui-vue-1.0.0.tgz#e4b62eb49c4fb76a42e58bed29d2c480d9186860"
+  integrity sha512-qaqj3UVpIZZPcGN0DGDLYMtri+dcxCMcaLmXpCp6F/iwhNX77/UxC7VFblluYyXUsB1r4/jwDPfDL5YNuk4RXA==
   dependencies:
     "@tonconnect/ui" "^2.0.3"
     "@vitejs/plugin-vue" "^5.0.5"

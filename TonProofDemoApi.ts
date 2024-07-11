@@ -3,7 +3,7 @@ import {
   ConnectAdditionalRequest,
   SendTransactionRequest,
   TonProofItemReplySuccess
-} from "@townsquarexyz/ui-vue";
+} from "@townsquarelabs/ui-vue";
 import './patch-local-storage-for-github-pages';
 import {CreateJettonRequestDto} from "./src/server/dto/create-jetton-request-dto";
 

@@ -100,7 +100,7 @@
   
   <script setup lang="ts">
 import { ref, watch } from "vue";
-import { THEME, useTonConnectUI } from "@townsquarexyz/ui-vue";
+import { THEME, useTonConnectUI } from "@townsquarelabs/ui-vue";
 // import ColorsModal from "./ColorsModal.vue";
 
 const checkboxes = ref([true, false, false, true, true, true]);

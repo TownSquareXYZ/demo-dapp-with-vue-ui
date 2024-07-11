@@ -21,7 +21,7 @@ import {
   TonConnectButton,
   TonConnectUIProvider,
   THEME,
-} from "@townsquarexyz/ui-vue";
+} from "@townsquarelabs/ui-vue";
 import TxForm from "../components/TxForm.vue";
 import CreateJettonDemo from "../components/CreateJettonDemo.vue";
 import TonProofDemo from "../components/TonProofDemo.vue";

@@ -14,7 +14,7 @@ import { ref, onMounted, inject, watch } from "vue";
 import { Vue3JsonEditor } from "vue3-json-editor";
 
 import { TonProofDemoApi } from "../../TonProofDemoApi";
-import { TonConnectUI, useTonWallet } from "@townsquarexyz/ui-vue";
+import { TonConnectUI, useTonWallet } from "@townsquarelabs/ui-vue";
 import useInterval from "../hooks/useInterval";
 
 export default {

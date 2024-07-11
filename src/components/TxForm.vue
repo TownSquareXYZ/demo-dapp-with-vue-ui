@@ -6,7 +6,7 @@ import {
   useTonAddress,
   Wallet,
   WalletInfoWithOpenMethod,
-} from "@townsquarexyz/ui-vue";
+} from "@townsquarelabs/ui-vue";
 import { inject, onMounted, Ref, ref } from "vue";
 import { Vue3JsonEditor } from "vue3-json-editor";
 

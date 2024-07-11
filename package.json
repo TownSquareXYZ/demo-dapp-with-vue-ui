@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host --force --mode development",
-    "build": "GH_PAGES=true VITE_GH_PAGES=true && vite build",
+    "build": "GH_PAGES=true VITE_GH_PAGES=1 && vite build",
     "preview": "vite preview",
     "postinstall": "node ./scripts/postinstall.mjs"
   },
@@ -15,7 +15,7 @@
     "@ton/crypto": "^3.2.0",
     "@ton/ton": "^13.11.2",
     "@tonconnect/ui": "^2.0.3",
-    "@townsquarexyz/ui-vue": "1.0.4",
+    "@townsquarelabs/ui-vue": "^1.0.0",
     "@vue/compat": "^3.4.29",
     "buffer": "^6.0.3",
     "jose": "^5.4.1",

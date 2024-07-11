@@ -24,7 +24,7 @@ import { Vue3JsonEditor } from "vue3-json-editor";
 import { CreateJettonRequestDto } from "../server/dto/create-jetton-request-dto";
 import { TonProofDemoApi } from "../../TonProofDemoApi";
 import { TonConnectUI, Wallet, WalletInfoWithOpenMethod } from "@tonconnect/ui";
-import { useTonWallet } from "@townsquarexyz/ui-vue";
+import { useTonWallet } from "@townsquarelabs/ui-vue";
 
 const jetton: CreateJettonRequestDto = {
   name: "Joint Photographic Experts Group",

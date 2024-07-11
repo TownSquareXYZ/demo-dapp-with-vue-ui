@@ -1,6 +1,6 @@
 import {TonClient4 } from "@ton/ton";
 import { Address} from '@ton/core'
-import {CHAIN} from "@townsquarexyz/ui-vue";
+import {CHAIN} from "@townsquarelabs/ui-vue";
 import {Buffer} from "buffer";
 
 export class TonApiService {

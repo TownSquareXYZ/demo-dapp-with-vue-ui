@@ -1,4 +1,4 @@
-import {CHAIN} from "@townsquarexyz/ui-vue";
+import {CHAIN} from "@townsquarelabs/ui-vue";
 import {z} from "zod";
 
 export const CheckProofRequest = z.object({
