@@ -17,7 +17,7 @@ export const checkProof: HttpResponseResolver = async ({request}) => {
     const client = TonApiService.create(body.network);
     const service = new TonProofService();
 
-    const isValid = await service.checkProof(body, (address : string) => client.getWalletPublicKey(address));
+    const isValid = await service.checkProof(body, (address) => client.getWalletPublicKey(address));
     if (!isValid) {
       return badRequest({error: 'Invalid proof'});
     }
