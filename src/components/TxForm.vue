@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import {
   SendTransactionRequest,
-  TonConnectUI,
   useTonWallet,
   useTonAddress,
-  Wallet,
-  WalletInfoWithOpenMethod,
-} from "@townsquarelabs/ui-vue";
+  TonConnectUI,
+  tonConnectUIKey
+} from "@townsquarelabs/ui-vue-test";
 import { inject, onMounted, Ref, ref } from "vue";
 import { Vue3JsonEditor } from "vue3-json-editor";
 
@@ -23,15 +22,13 @@ const tx: Ref<SendTransactionRequest> = ref({
     },
   ],
 });
-const tonConnectUI = inject<TonConnectUI | null>("tonConnectUI", null);
+const tonConnectUI = inject<TonConnectUI | null>(tonConnectUIKey, null);
 /**
  * address
  */
 const userFriendlyAddress = useTonAddress();
 const rawAddress = useTonAddress(false);
-const wallet = useTonWallet() as unknown as Ref<
-  Wallet | (Wallet & WalletInfoWithOpenMethod) | null
->;
+const wallet = useTonWallet();
 
 onMounted(async () => {
   const jsonEditorVue = document.querySelector(

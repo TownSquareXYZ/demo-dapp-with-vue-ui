@@ -2304,6 +2304,11 @@ entities@^5.0.0:
   resolved "https://registry.npmmirror.com/entities/-/entities-5.0.0.tgz#b2ab51fe40d995817979ec79dd621154c3c0f62b"
   integrity sha512-BeJFvFRJddxobhvEdm5GqHzRV/X+ACeuw0/BuuxsCh1EUZcAIz8+kYmBp/LrQuloy6K1f3a0M7+IhmZ7QnkISA==
 
+eruda@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.npmmirror.com/eruda/-/eruda-3.3.0.tgz#16fd6fc91f8b396cf67b7466bd28f19e76497588"
+  integrity sha512-WsAEUIa9SNgLqaROMqnSvNeq6bySpjiG2ZQJYYGZw6VHmJ3zBBPCYyZDz0Dmymm9azh8TalkY2pEX2C2PiHIjw==
+
 esbuild@^0.18.10:
   version "0.18.20"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.18.20.tgz#4709f5a34801b43b799ab7d6d82f7284a9b7a7a6"

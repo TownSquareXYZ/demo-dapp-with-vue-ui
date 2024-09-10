@@ -10,11 +10,11 @@
 </template>
     
     <script  lang="ts">
-import { ref, onMounted, inject, watch } from "vue";
+import { ref, onMounted, watch, inject, reactive } from "vue";
 import { Vue3JsonEditor } from "vue3-json-editor";
 
 import { TonProofDemoApi } from "../../TonProofDemoApi";
-import { TonConnectUI, useTonWallet } from "@townsquarelabs/ui-vue";
+import { TonConnectUI, tonConnectUIKey, useTonConnectUI, useTonWallet } from "@townsquarelabs/ui-vue-test";
 import useInterval from "../hooks/useInterval";
 
 export default {
@@ -27,7 +27,10 @@ export default {
     const data = ref({});
 
     const wallet = useTonWallet();
-    const tonConnectUI = inject<TonConnectUI | null>("tonConnectUI", null);
+    const tonConnectUI = inject<TonConnectUI | null>(tonConnectUIKey, null);
+  const reactiveTonConnectUI = reactive({
+        value: tonConnectUI
+    });
 
     const authorized = ref(false);
     const injected = ref(false);
@@ -67,21 +70,22 @@ export default {
     const setAuthorized = () => {
       try {
         tonConnectUI!.onStatusChange(async (w) => {
+          console.log('----->setAuthorized' , w );
           if (!w) {
             TonProofDemoApi.reset();
             authorized.value = false;
             return;
           }
 
-          if (w.connectItems?.tonProof && "proof" in w.connectItems.tonProof) {
+          if (w.connectItems?.tonProof && 'proof' in w.connectItems.tonProof) {
             await TonProofDemoApi.checkProof(
               w.connectItems.tonProof.proof,
               w.account
             );
           }
-
+          console.log(w.connectItems?.tonProof);
           if (!TonProofDemoApi.accessToken) {
-            tonConnectUI!.disconnect();
+            // tonConnectUI!.disconnect();
             authorized.value = false;
             return;
           }
@@ -93,19 +97,21 @@ export default {
       }
     };
 
-    watch(tonConnectUI!, () => {
-      if (!injected.value && wallet != null) {
-        setAuthorized();
-        recreateProofPayload();
-        injected.value = true;
-      }
-      if (wallet == null) {
-        injected.value = false;
-      }
-    });
+    // watch(reactiveTonConnectUI, () => {
+    //   console.log('----- tonConnectUI changed');
+    //   if (!injected.value && wallet != null) {
+    //     setAuthorized();
+    //     recreateProofPayload();
+    //     injected.value = true;
+    //   }
+    //   if (wallet == null) {
+    //     injected.value = false;
+    //   }
+    // });
 
     onMounted(() => {
       recreateProofPayload();
+      setAuthorized();
       useInterval(recreateProofPayload, TonProofDemoApi.refreshIntervalMs);
     });
 

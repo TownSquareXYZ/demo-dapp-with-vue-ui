@@ -1,4 +1,4 @@
-import {CHAIN} from "@townsquarelabs/ui-vue";
+import {CHAIN} from "@townsquarelabs/ui-vue-test";
 import {decodeJwt, JWTPayload, jwtVerify, SignJWT} from 'jose';
 
 /**

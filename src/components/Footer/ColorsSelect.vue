@@ -33,7 +33,7 @@
 </template>
   
   <script>
-import { THEME, useTonConnectUI } from "@townsquarelabs/ui-vue";
+import { THEME, useTonConnectUI } from "@townsquarelabs/ui-vue-test";
 import { ref, watch } from "vue";
 
 const defaultColors = {

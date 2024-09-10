@@ -22,7 +22,8 @@
       <select @change="onBordersChange($event)">
         <option value="m">m</option>
         <option value="s">s</option>
-        <option value="none">none</option>∂
+        <option value="none">none</option>
+        ∂
       </select>
     </div>
 
@@ -100,7 +101,7 @@
   
   <script setup lang="ts">
 import { ref, watch } from "vue";
-import { THEME, useTonConnectUI } from "@townsquarelabs/ui-vue";
+import { THEME, useTonConnectUI } from "@townsquarelabs/ui-vue-test";
 // import ColorsModal from "./ColorsModal.vue";
 
 const checkboxes = ref([true, false, false, true, true, true]);
@@ -108,7 +109,7 @@ const returnStrategy = ref<any>("back");
 const skipRedirect = ref<any>("ios");
 const enableAndroidBackHandler = ref(true);
 
-const [tonConnectUI, setOptions] = useTonConnectUI();
+const { setOptions } = useTonConnectUI();
 
 const onLangChange = (event: Event) => {
   const target = event.target as HTMLInputElement;

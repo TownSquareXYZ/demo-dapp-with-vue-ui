@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import router from './router/index'
+import eruda from "eruda";
+
 
 import { runSingleInstance } from './utils/run-signle-instance';
 import { worker } from './server/worker';
@@ -43,6 +45,8 @@ async function enableMocking() {
         setInterval(verifyAndRestartWorker, 1_000);
     });
 }
+eruda.init();
+
 const app = createApp(App);
 
 app.use(router)
