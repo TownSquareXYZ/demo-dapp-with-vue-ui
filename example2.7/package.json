@@ -1,0 +1,56 @@
+{
+  "name": "vite-ts-vue27",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint-fix": "eslint --fix --ext .ts,.vue src",
+    "lint": "eslint",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@tonconnect/ui": "^2.0.3",
+    "axios": "^0.27.2",
+    "pinia": "^2.1.7",
+    "rollup": "^4.18.0",
+    "vue": "^2.7.16",
+    "vue-echarts": "^6.6.8",
+    "vue-router": "^3.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.7",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "@vitejs/plugin-legacy": "^5.2.0",
+    "@vitejs/plugin-vue2": "^2.3.1",
+    "@vue-macros/volar": "^0.18.16",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.20.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "mockjs": "^1.1.0",
+    "postcss": "^8.4.33",
+    "prettier": "^2.8.8",
+    "sass": "^1.69.7",
+    "terser": "^5.26.0",
+    "typescript": "^4.9.5",
+    "unplugin-vue-components": "^0.22.12",
+    "unplugin-vue-define-options": "^1.4.2",
+    "vite": "^5.0.11",
+    "vite-plugin-mock": "^2.9.8",
+    "vue-demi": "^0.14.8",
+    "vue-eslint-parser": "^9.4.0",
+    "vue-tsc": "^0.39.5"
+  },
+  "lint-staged": {
+    "*.{vue,ts,tsx}": [
+      "eslint --ext .ts,.vue src"
+    ]
+  }
+}
