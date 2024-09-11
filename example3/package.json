@@ -13,7 +13,7 @@
     "@ton-community/assets-sdk": "^0.0.4",
     "@ton/core": "^0.56.3",
     "@ton/crypto": "^3.2.0",
-    "@ton/ton": "^13.11.2",
+    "@ton/ton": "^14.0.0",
     "@tonconnect/ui": "2.0.8",
     "@townsquarelabs/ui-vue": "2.0.8",
     "@vue/compat": "^3.4.29",

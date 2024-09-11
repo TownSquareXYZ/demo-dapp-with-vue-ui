@@ -10,7 +10,7 @@
 </template>
     
     <script  lang="ts">
-import { ref, onMounted, inject, reactive } from "vue";
+import { ref, onMounted, inject } from "vue";
 // import { Vue3JsonEditor } from "vue3-json-editor";
 
 import { TonProofDemoApi } from "../../TonProofDemoApi";
@@ -28,9 +28,6 @@ export default {
 
     const wallet = useTonWallet();
     const tonConnectUI = inject<TonConnectUI | null>(tonConnectUIKey, null);
-  const reactiveTonConnectUI = reactive({
-        value: tonConnectUI
-    });
 
     const authorized = ref(false);
     const injected = ref(false);
@@ -70,7 +67,6 @@ export default {
     const setAuthorized = () => {
       try {
         tonConnectUI!.onStatusChange(async (w) => {
-          console.log('----->setAuthorized' , w );
           if (!w) {
             TonProofDemoApi.reset();
             authorized.value = false;
@@ -85,7 +81,7 @@ export default {
           }
           console.log(w.connectItems?.tonProof);
           if (!TonProofDemoApi.accessToken) {
-            // tonConnectUI!.disconnect();
+            tonConnectUI!.disconnect();
             authorized.value = false;
             return;
           }

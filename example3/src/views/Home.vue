@@ -19,13 +19,15 @@ import {
   TonConnectButton,
   TonConnectUIProvider,
   THEME,
+  TonConnectUIProviderProps
 } from "@townsquarelabs/ui-vue";
+import { AddTonConnectPrefix} from "@townsquarelabs/ui-vue"
 import TxForm from "../components/TxForm.vue";
 import CreateJettonDemo from "../components/CreateJettonDemo.vue";
 import TonProofDemo from "../components/TonProofDemo.vue";
 import Footer from "../components/Footer/Footer.vue";
 
-const options : any = {
+const options : TonConnectUIProviderProps = {
   manifestUrl:
     "https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json",
   uiPreferences: { theme: THEME.DARK },

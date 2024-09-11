@@ -28,9 +28,6 @@ export default {
 
     const wallet = useTonWallet();
     const tonConnectUI = inject<TonConnectUI | null>(tonConnectUIKey, null);
-  const reactiveTonConnectUI = reactive({
-        value: tonConnectUI
-    });
 
     const authorized = ref(false);
     const injected = ref(false);
@@ -43,7 +40,7 @@ export default {
         }
 
         const payload = await TonProofDemoApi.generatePayload();
-
+        
         if (payload) {
           tonConnectUI.setConnectRequestParameters({
             state: "ready",
