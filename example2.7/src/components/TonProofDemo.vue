@@ -5,13 +5,18 @@
       Call backend getAccountInfo()
     </button>
     <div class="ton-proof-demo__error" v-else>Connect wallet to call API</div>
-    <!-- <Vue3JsonEditor v-model="data" :expandedOnStart="true" mode="view" /> -->
+    <json-viewer
+      :value="data"
+      :expand-depth=5
+      copyable
+      boxed
+      sort></json-viewer>
   </div>
 </template>
     
     <script  lang="ts">
 import { ref, onMounted, inject } from "vue";
-// import { Vue3JsonEditor } from "vue3-json-editor";
+import JsonViewer from 'vue-json-viewer';
 
 import { TonProofDemoApi } from "../../TonProofDemoApi";
 import { TonConnectUI, tonConnectUIKey, useTonWallet } from "@townsquarelabs/ui-vue";
@@ -20,7 +25,7 @@ import useInterval from "../hooks/useInterval";
 export default {
   name: "TonProofDemo",
   components: {
-    // Vue3JsonEditor,
+    JsonViewer
   },
   setup() {
     const firstProofLoading = ref(true);
@@ -30,7 +35,6 @@ export default {
     const tonConnectUI = inject<TonConnectUI | null>(tonConnectUIKey, null);
 
     const authorized = ref(false);
-    const injected = ref(false);
 
     const recreateProofPayload = async () => {
       if (tonConnectUI) {
@@ -93,18 +97,6 @@ export default {
       }
     };
 
-    // watch(reactiveTonConnectUI, () => {
-    //   console.log('----- tonConnectUI changed');
-    //   if (!injected.value && wallet != null) {
-    //     setAuthorized();
-    //     recreateProofPayload();
-    //     injected.value = true;
-    //   }
-    //   if (wallet == null) {
-    //     injected.value = false;
-    //   }
-    // });
-
     onMounted(() => {
       recreateProofPayload();
       setAuthorized();
@@ -130,6 +122,7 @@ export default {
   // margin-top: 60px;
   margin: 60px auto;
   // padding: 20px;
+  text-align: left;
 
   h3 {
     color: white;

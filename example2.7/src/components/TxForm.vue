@@ -6,8 +6,8 @@ import {
   TonConnectUI,
   tonConnectUIKey
 } from "@townsquarelabs/ui-vue";
-import { inject, onMounted, Ref, ref } from "vue";
-// import { Vue3JsonEditor } from "vue3-json-editor";
+import { inject, Ref, ref } from "vue";
+import JsonViewer from 'vue-json-viewer';
 
 const tx: Ref<SendTransactionRequest> = ref({
   validUntil: Math.floor(Date.now() / 1000) + 600,
@@ -30,19 +30,6 @@ const userFriendlyAddress = useTonAddress();
 const rawAddress = useTonAddress(false);
 const wallet = useTonWallet();
 
-onMounted(async () => {
-  const jsonEditorVue = document.querySelector(
-    ".jsoneditor-vue"
-  ) as HTMLElement | null;
-  if (jsonEditorVue) {
-    jsonEditorVue.style.width = "100%";
-  }
-  const aceEditor = document.querySelector(".ace_editor") as HTMLElement | null;
-  if (aceEditor) {
-    aceEditor.style.minHeight = "300px";
-  }
-});
-
 const handleSendTransaction = () => {
   if (tonConnectUI) {
     tonConnectUI.sendTransaction(tx.value);
@@ -57,10 +44,6 @@ const openWalletModal = () => {
     console.error("TonConnectUI instance is not available.");
   }
 };
-const jsonChange = (value: any) => {
-  // console.log(value);
-  tx.value = value;
-};
 </script>
 
 <template>
@@ -74,13 +57,12 @@ const jsonChange = (value: any) => {
 
     <h3>Configure and send transaction</h3>
 
-    <!-- <Vue3JsonEditor
-      v-model="tx"
-      :expandedOnStart="true"
-      @json-change="jsonChange"
-      mode="code"
-      class="json-view"
-    /> -->
+    <json-viewer
+      :value="tx"
+      :expand-depth=5
+      copyable
+      boxed
+      sort></json-viewer>
 
     <button v-if="wallet" @click="handleSendTransaction">
       Send transaction
@@ -102,6 +84,8 @@ const jsonChange = (value: any) => {
   align-items: center;
   text-align: left;
   margin: 0 auto;
+  text-align: left;
+
   .json-view {
     color: #fff !important;
     width: 100%;

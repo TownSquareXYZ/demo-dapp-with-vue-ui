@@ -8,18 +8,18 @@
       Connect wallet to send transaction
     </div>
 
-    <!-- <Vue3JsonEditor
-      v-model="data"
-      :expandedOnStart="true"
-      mode="view"
-      theme="my-json-theme"
-    /> -->
+    <json-viewer
+    :value="data"
+    :expand-depth=5
+    copyable
+    boxed
+    sort></json-viewer>
   </div>
 </template>
 
 <script lang="ts">
 import { ref } from "vue";
-// import { Vue3JsonEditor } from "vue3-json-editor";
+import JsonViewer from 'vue-json-viewer'
 
 import { CreateJettonRequestDto } from "../server/dto/create-jetton-request-dto";
 import { TonProofDemoApi } from "../../TonProofDemoApi";
@@ -39,7 +39,7 @@ const jetton: CreateJettonRequestDto = {
 export default {
   name: "CreateJettonDemo",
   components: {
-    // Vue3JsonEditor,
+    JsonViewer,
   },
   setup() {
     const { tonConnectUI } = useTonConnectUI();
@@ -75,6 +75,8 @@ export default {
   align-items: center;
   // margin-top: 60px;
   margin: 60px auto;
+  text-align: left;
+
   // padding: 20px;
   .json-editor {
     width: 80%;
@@ -119,21 +121,6 @@ export default {
     &:active {
       transform: scale(0.97);
     }
-  }
-  .jv-container.jv-light {
-    background: transparent !important;
-  }
-  .jv-container.jv-light .jv-item.jv-object {
-    color: #cdf8ff !important;
-  }
-  .jv-container.jv-light .jv-key {
-    color: #cdf8ff !important;
-  }
-  .jv-container.jv-light {
-    color: #cdf8ff !important;
-  }
-  .jv-container.jv-light .jv-item.jv-array {
-    color: #cdf8ff !important;
   }
 }
 </style>

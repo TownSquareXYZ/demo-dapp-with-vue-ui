@@ -4,10 +4,10 @@
       <div class="m-btn">
         <TonConnectButton :button-root-id="`ton-connect-button`" />
       </div>
-      <!-- <tx-form></tx-form> -->
-      <!-- <create-jetton-demo></create-jetton-demo> -->
-      <!-- <ton-proof-demo></ton-proof-demo> -->
-      <!-- <Footer></Footer> -->
+      <tx-form></tx-form>
+      <create-jetton-demo></create-jetton-demo>
+      <ton-proof-demo></ton-proof-demo>
+      <Footer></Footer>
     </TonConnectUIProvider>
     <!-- <HelloWorld></HelloWorld> -->
   </div>
@@ -20,10 +20,10 @@ import {
   TonConnectUIProvider,
   THEME,
 } from "@townsquarelabs/ui-vue";
-import TxForm from "../components/TxForm.vue";
-import CreateJettonDemo from "../components/CreateJettonDemo.vue";
-import TonProofDemo from "../components/TonProofDemo.vue";
-import Footer from "../components/Footer/Footer.vue";
+import TxForm from "../../components/TxForm.vue";
+import CreateJettonDemo from "../../components/CreateJettonDemo.vue";
+import TonProofDemo from "../../components/TonProofDemo.vue";
+import Footer from "../../components/Footer/Footer.vue";
 
 const options : any = {
   manifestUrl:

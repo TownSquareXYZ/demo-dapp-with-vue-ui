@@ -13,11 +13,11 @@
   },
   "dependencies": {
     "@tonconnect/ui": "^2.0.3",
-    "axios": "^0.27.2",
-    "pinia": "^2.1.7",
+    "buffer": "^6.0.3",
     "rollup": "^4.18.0",
     "vue": "^2.7.16",
     "vue-echarts": "^6.6.8",
+    "vue-json-viewer": "2",
     "vue-router": "^3.6.5"
   },
   "devDependencies": {
@@ -36,7 +36,6 @@
     "lint-staged": "^15.2.2",
     "mockjs": "^1.1.0",
     "postcss": "^8.4.33",
-    "prettier": "^2.8.8",
     "sass": "^1.69.7",
     "terser": "^5.26.0",
     "typescript": "^4.9.5",
