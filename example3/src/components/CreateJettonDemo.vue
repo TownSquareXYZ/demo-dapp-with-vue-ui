@@ -23,7 +23,7 @@ import { Vue3JsonEditor } from "vue3-json-editor";
 
 import { CreateJettonRequestDto } from "../server/dto/create-jetton-request-dto";
 import { TonProofDemoApi } from "../../TonProofDemoApi";
-import { useTonWallet, useTonConnectUI , tonConnectUI } from "@townsquarelabs/ui-vue";
+import { useTonWallet, useTonConnectUI} from "@townsquarelabs/ui-vue";
 
 const jetton: CreateJettonRequestDto = {
   name: "Joint Photographic Experts Group",
@@ -43,7 +43,6 @@ export default {
   },
   setup() {
     const { tonConnectUI } = useTonConnectUI();
-    // const tonConnectUI = inject<TonConnectUI | null>(tonConnectUIKey, null);
     const data = ref({});
     // const wallet = ref(null);
     const wallet = useTonWallet();

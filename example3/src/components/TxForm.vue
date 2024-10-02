@@ -3,10 +3,9 @@ import {
   SendTransactionRequest,
   useTonWallet,
   useTonAddress,
-  TonConnectUI,
-  tonConnectUIKey
+  useTonConnectUI
 } from "@townsquarelabs/ui-vue";
-import { inject, onMounted, Ref, ref } from "vue";
+import { onMounted, Ref, ref } from "vue";
 import { Vue3JsonEditor } from "vue3-json-editor";
 
 const tx: Ref<SendTransactionRequest> = ref({
@@ -22,7 +21,7 @@ const tx: Ref<SendTransactionRequest> = ref({
     },
   ],
 });
-const tonConnectUI = inject<TonConnectUI | null>(tonConnectUIKey, null);
+const { tonConnectUI } = useTonConnectUI();
 /**
  * address
  */

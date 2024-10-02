@@ -38,33 +38,41 @@ class TonProofDemoApiService {
     }
   }
 
-  async checkProof(proof: TonProofItemReplySuccess['proof'], account: Account): Promise<void> {
+  async checkProof(proof: TonProofItemReplySuccess['proof'], account: Account): Promise<boolean> {
     try {
-      const reqBody = {
-        address: account.address,
-        network: account.chain,
-        public_key: account.publicKey,
-        proof: {
-          ...proof,
-          state_init: account.walletStateInit,
-        },
-      };
+        const reqBody = {
+            address: account.address,
+            network: account.chain,
+            public_key: account.publicKey,
+            proof: {
+                ...proof,
+                state_init: account.walletStateInit,
+            },
+        };
 
-      const response = await (
-        await fetch(`${this.host}/api/check_proof`, {
-          method: 'POST',
-          body: JSON.stringify(reqBody),
-        })
-      ).json();
+        const response = await (
+            await fetch(`${this.host}/api/check_proof`, {
+                method: 'POST',
+                body: JSON.stringify(reqBody),
+                headers: {
+                    'Content-Type': 'application/json' // 添加 Content-Type 头部
+                }
+            })
+        ).json();
 
-      if (response?.token) {
-        localStorage.setItem(this.localStorageKey, response.token);
-        this.accessToken = response.token;
-      }
+        if (response?.token) {
+            localStorage.setItem(this.localStorageKey, response.token);
+            this.accessToken = response.token;
+            return true;
+        }
+        
+        return false;
     } catch (e) {
-      console.log('checkProof error:', e);
+        console.log('checkProof error:', e);
+        return false;
     }
-  }
+}
+
 
   async getAccountInfo(account: Account) {
     const response = await (
