@@ -12,11 +12,17 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@ton-community/assets-sdk": "^0.0.4",
+    "@ton/core": "^0.56.3",
+    "@ton/crypto": "^3.2.0",
+    "@ton/ton": "^14.0.0",
     "@tonconnect/ui": "^2.0.3",
     "buffer": "^6.0.3",
+    "jose": "^5.4.1",
+    "msw": "^2.3.1",
     "rollup": "^4.18.0",
+    "scss": "^0.2.4",
     "vue": "^2.7.16",
-    "vue-echarts": "^6.6.8",
     "vue-json-viewer": "2",
     "vue-router": "^3.6.5"
   },
@@ -36,7 +42,7 @@
     "lint-staged": "^15.2.2",
     "mockjs": "^1.1.0",
     "postcss": "^8.4.33",
-    "sass": "^1.69.7",
+    "sass-embedded": "^1.79.4",
     "terser": "^5.26.0",
     "typescript": "^4.9.5",
     "unplugin-vue-components": "^0.22.12",

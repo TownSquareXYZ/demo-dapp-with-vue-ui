@@ -43,7 +43,6 @@ export default {
   },
   setup() {
     const { tonConnectUI } = useTonConnectUI();
-    // const tonConnectUI = inject<TonConnectUI | null>(tonConnectUIKey, null);
     const data = ref({});
     // const wallet = ref(null);
     const wallet = useTonWallet();
