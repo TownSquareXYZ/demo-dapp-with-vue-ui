@@ -23,7 +23,7 @@ export default ({ mode }) => {
     },
     base: isGitHubPages ? '/demo-dapp-with-vue-ui/' : './',
     server: {
-      port: 8000,
+      port: 5173,
       fs: {
         allow: ['../sdk', './'],
       },
