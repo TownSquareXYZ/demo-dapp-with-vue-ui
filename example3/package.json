@@ -15,7 +15,7 @@
     "@ton/crypto": "^3.2.0",
     "@ton/ton": "^14.0.0",
     "@tonconnect/ui": "2.0.8",
-    "@townsquarelabs/ui-vue": "2.0.8",
+    "@townsquarelabs/ui-vue": "^2.0.11-beta.0",
     "@vue/compat": "^3.4.29",
     "buffer": "^6.0.3",
     "eruda": "^3.3.0",

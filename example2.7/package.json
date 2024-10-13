@@ -17,6 +17,7 @@
     "@ton/crypto": "^3.2.0",
     "@ton/ton": "^14.0.0",
     "@tonconnect/ui": "^2.0.3",
+    "@townsquarelabs/ui-vue": "^2.0.11-beta.0",
     "buffer": "^6.0.3",
     "jose": "^5.4.1",
     "msw": "^2.3.1",
